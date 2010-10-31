@@ -20,9 +20,8 @@ def merge(left, right, end, array):
     while (left < right & right <= end):
         if array[left] >= array[right]:
             swap_and_shift(right, left, array)
-            left+=1; right+=1
-        else:
-            left+=1
+            right+=1
+        left+=1
             
 def swap_and_shift(from_pos, to_pos, array):
         holder = array[from_pos]
