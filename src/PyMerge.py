@@ -17,20 +17,16 @@ def merge_sort_r(start, end, array):
 
     
 def merge(left, right, end, array):
-    while (left < right and right <= end):
+    while (left < right & right <= end):
         if array[left] >= array[right]:
             swap_and_shift(right, left, array)
-            left+=1
-            right+=1
+            left+=1; right+=1
         else:
             left+=1
             
 def swap_and_shift(from_pos, to_pos, array):
         holder = array[from_pos]
-        #shifting the array by one
-        shift_range = range(to_pos+1, from_pos+1)
-        shift_range.reverse()
-        for i in shift_range:
+        for i in range(from_pos, to_pos, -1):
             array[i] = array[i-1]
         array[to_pos] = holder
 
